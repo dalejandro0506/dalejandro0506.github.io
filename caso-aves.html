@@ -1,87 +1,87 @@
 <!doctype html>
-<html lang="es">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Avistamiento de Aves en la Selva · Alejo Socha</title>
-<meta name="description" content="Caso: juego de atención visual con seguimiento ocular para enseñar metodologías de investigación cognitiva a niños desde los 7 años. Semillero de Cognición, Universidad de los Andes.">
+<title>Jungle Bird Spotting · Alejo Socha</title>
+<meta name="description" content="Case: a visual-attention game with eye tracking to teach cognitive research methods to children from age 7. Cognition Research Group, Universidad de los Andes.">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="portafolio.css">
 </head>
 <body>
-<header class="nav"><div class="wrap"><a class="brand" href="index.html">Alejo Socha</a><nav><ul><li><a href="index.html">Inicio</a></li><li><a href="cv.html">CV</a></li><li><a href="proyectos.html" class="active">Portafolio de proyectos</a></li><li><a href="tesis.html">Trayectoria académica</a></li></ul></nav></div></header>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html">Alejo Socha</a><nav><ul><li><a href="index.html">Home</a></li><li><a href="cv.html">CV</a></li><li><a href="proyectos.html" class="active">Project portfolio</a></li><li><a href="tesis.html">Academic background</a></li></ul></nav></div></header>
 
 <section class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Semillero de Cognición · Uniandes · Caso</p>
-      <h1>Avistamiento de Aves en la Selva</h1>
-      <p class="lead">Un juego de atención visual con seguimiento ocular para enseñar y practicar metodologías de investigación cognitiva, pensado para niños desde los 7 años.</p>
+      <p class="eyebrow">Cognition Research Group · Uniandes · Case</p>
+      <h1>Jungle Bird Spotting</h1>
+      <p class="lead">A visual-attention game with eye tracking to teach and practice cognitive research methods, designed for children from age 7.</p>
       <div class="btns">
-        <a class="btn solid" href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/avistamiento_dashboard.html">Abrir el tablero</a>
-        <a class="btn" href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html">Leer el manual</a>
+        <a class="btn solid" href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/avistamiento_dashboard.html">Open the dashboard</a>
+        <a class="btn" href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html">Read the manual (in Spanish)</a>
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><b>7+</b><span>años: edad mínima de los participantes</span></div>
-      <div class="stat"><b>2</b><span>recursos: manual de uso y tablero de resultados</span></div>
+      <div class="stat"><b>7+</b><span>years: minimum age of participants</span></div>
+      <div class="stat"><b>2</b><span>resources: user manual and results dashboard</span></div>
     </div>
   </div>
 </section>
 
 <main>
 <div class="wrap">
-<a class="back" href="proyectos.html">← Todos los proyectos</a>
+<a class="back" href="proyectos.html">← All projects</a>
 
 <dl class="facts">
-  <div><dt>Contexto</dt><dd>Semillero de Cognición, Universidad de los Andes</dd></div>
-  <div><dt>Tecnología</dt><dd>Eye tracker Gazepoint, Quarto</dd></div>
-  <div><dt>Estado</dt><dd>En desarrollo; manual, tablero y repositorio públicos</dd></div>
+  <div><dt>Context</dt><dd>Cognition Research Group, Universidad de los Andes</dd></div>
+  <div><dt>Technology</dt><dd>Gazepoint eye tracker, Quarto</dd></div>
+  <div><dt>Status</dt><dd>In development; manual, dashboard and repository are public</dd></div>
 <!-- COMPLETAR: añadir <div><dt>Mi rol</dt><dd>diseño del juego, estímulos, análisis, tablero…</dd></div> -->
 </dl>
 
-<h2>La idea</h2>
+<h2>The idea</h2>
 <div class="prose">
-  <p>Enseñar cómo se investiga la atención suele quedarse en la teoría. Este proyecto convierte el proceso en un juego: quien participa busca aves en la selva mientras el equipo registra hacia dónde mira, y así se practican de forma concreta las etapas de un estudio de seguimiento ocular.</p>
+  <p>Teaching how attention is researched often stays theoretical. This project turns the process into a game: participants look for birds in the jungle while the team records where they look, so the stages of an eye-tracking study are practiced in a concrete way.</p>
   <!-- COMPLETAR (2-3 frases): qué pregunta de investigación se ilustra con el juego (p. ej. qué patrón de atención se mide) y dónde se ha usado o se usaría (colegios, talleres, semillero). -->
 </div>
 
-<h2>Las aves y el puntaje</h2>
-<p class="intro">Cada escena tiene aves de tres categorías, con dos colores cada una. El puntaje es el tiempo de fijación por el valor de cada ave; solo cuentan las fijaciones de al menos 0,2 segundos.</p>
+<h2>The birds and the score</h2>
+<p class="intro">Each scene has birds in three categories, two colors each. The score is the fixation time multiplied by the value of each bird; only fixations of at least 0.2 seconds count.</p>
 <div class="cards">
-  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A3.png" alt="Ave roja" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A1.png" alt="Ave magenta" loading="lazy" style="height:92px;width:auto"></div><p class="label">Penalización · −5 por segundo</p><p>Rojo y magenta, las más llamativas. Evalúan el control inhibitorio: resistir lo que llama la atención.</p></div>
-  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A7.png" alt="Ave amarilla" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A11.png" alt="Ave naranja" loading="lazy" style="height:92px;width:auto"></div><p class="label">Recompensa · +5 por segundo</p><p>Amarillo y naranja. Evalúan la búsqueda visual breve.</p></div>
-  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A12.png" alt="Ave verde oliva camuflada entre hojas" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A15.png" alt="Búho marrón" loading="lazy" style="height:92px;width:auto"></div><p class="label">Recompensa alta · +10 por segundo</p><p>Verde oliva y marrón, las aves camufladas y más difíciles de encontrar. Evalúan la búsqueda activa dirigida por metas.</p></div>
+  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A3.png" alt="Red bird" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A1.png" alt="Magenta bird" loading="lazy" style="height:92px;width:auto"></div><p class="label">Penalty · −5 per second</p><p>Red and magenta, the most eye-catching. They assess inhibitory control: resisting what grabs attention.</p></div>
+  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A7.png" alt="Yellow bird" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A11.png" alt="Orange bird" loading="lazy" style="height:92px;width:auto"></div><p class="label">Reward · +5 per second</p><p>Yellow and orange. They assess brief visual search.</p></div>
+  <div class="card"><div style="display:flex;gap:.8rem;align-items:flex-end;margin-bottom:.8rem"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A12.png" alt="Olive green bird camouflaged among leaves" loading="lazy" style="height:92px;width:auto"><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/A15.png" alt="Brown owl" loading="lazy" style="height:92px;width:auto"></div><p class="label">High reward · +10 per second</p><p>Olive green and brown, the camouflaged birds that are hardest to find. They assess active, goal-directed search.</p></div>
 </div>
-<p class="meta"><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html#las-aves-y-su-funci%C3%B3n-cognitiva">Las aves y su función cognitiva, en el manual →</a> · <a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html#descripci%C3%B3n-general-y-f%C3%B3rmula-de-c%C3%A1lculo">Cómo se calcula el puntaje →</a></p>
+<p class="meta"><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html#las-aves-y-su-funci%C3%B3n-cognitiva">The birds and their cognitive function, in the manual (in Spanish) →</a> · <a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html#descripci%C3%B3n-general-y-f%C3%B3rmula-de-c%C3%A1lculo">How the score is calculated (in Spanish) →</a></p>
 
-<h2>Cómo se ve</h2>
+<h2>What it looks like</h2>
 <div class="gallery">
-  <figure><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/E1.jpg" alt="Escena 1 del juego: selva con un río y aves de varios colores entre la vegetación" loading="lazy"><figcaption>Escena 1: aves de las tres categorías entre la vegetación.</figcaption></figure>
-  <figure><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/E10.jpg" alt="Escena 10 del juego: sendero en la selva con aves entre los árboles" loading="lazy"><figcaption>Escena 10, del último nivel.</figcaption></figure>
+  <figure><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/E1.jpg" alt="Game scene 1: jungle with a river and birds of various colors among the vegetation" loading="lazy"><figcaption>Scene 1: birds of all three categories among the vegetation.</figcaption></figure>
+  <figure><img src="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/assets/E10.jpg" alt="Game scene 10: jungle path with birds among the trees" loading="lazy"><figcaption>Scene 10, from the last level.</figcaption></figure>
 </div>
-<p class="note">El juego tiene 10 escenas en 5 niveles de dificultad creciente, con tiempos de exposición de 5,0 a 3,0 segundos. Clic en una imagen para ampliarla.</p>
+<p class="note">The game has 10 scenes across 5 levels of increasing difficulty, with exposure times from 5.0 to 3.0 seconds. Click an image to enlarge it.</p>
 
-<h2>Recursos</h2>
+<h2>Resources</h2>
 <div class="cards">
-  <div class="card"><p class="label">Manual de uso</p><p>Guía técnico-pedagógica para aplicar el juego: marco teórico, instalación y calibración del equipo, configuración del experimento, sistema de puntuación, extracción de datos y operación en el laboratorio.</p><p><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html">Leer el manual →</a></p></div>
-  <div class="card"><p class="label">Tablero de resultados</p><p>Se abre en el navegador, sin instalación. Muestra datos de prueba de 8 jugadores ficticios y permite cargar el archivo exportado por Gazepoint; los datos se procesan en el navegador.</p><p><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/avistamiento_dashboard.html">Abrir el tablero →</a></p></div>
+  <div class="card"><p class="label">User manual</p><p>Technical and teaching guide for running the game: theoretical framework, equipment installation and calibration, experiment setup, scoring system, data extraction and lab operation. Written in Spanish.</p><p><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/manual_eyetracking_avistamiento.html">Read the manual (in Spanish) →</a></p></div>
+  <div class="card"><p class="label">Results dashboard</p><p>Opens in the browser, no installation needed. It shows test data from 8 fictitious players and lets you load the file exported by Gazepoint; data is processed in the browser.</p><p><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/avistamiento_dashboard.html">Open the dashboard →</a></p></div>
 </div>
 
 <!-- COMPLETAR: sección "Cómo se ve" con una captura del juego y otra del tablero. Formato: <h2>Cómo se ve</h2><div class="gallery"><figure><img src="img/aves-xxx.webp" alt="..."><figcaption>...</figcaption></figure></div> -->
 
-<p class="note">El tablero muestra datos de prueba de 8 jugadores ficticios; no hay información de participantes reales.</p>
+<p class="note">The dashboard shows test data from 8 fictitious players; there is no information from real participants.</p>
 
 <div class="case-nav">
-  <a href="caso-acnur.html">← Anterior: Tablero de reasentamiento</a>
-  <a href="proyectos.html">Todos los proyectos →</a>
+  <a href="caso-acnur.html">← Previous: Resettlement dashboard</a>
+  <a href="proyectos.html">All projects →</a>
 </div>
 
 </div>
 </main>
 
 <footer><div class="wrap">© 2026 Daniel Alejandro Socha Castelblanco · Bogotá, Colombia · <a href="https://github.com/dalejandro0506">GitHub</a></div></footer>
-<script src="lightbox.js" defer></script>
-<script src="gaze.js" defer></script>
-</body>
-</html>
+<script src="lightbox.js" defer=""></script>
+<script src="gaze.js" defer=""></script>
+
+
+</body></html>
