@@ -1,3 +1,49 @@
+/* Tira de puntos: datos dispersos que se ordenan hasta una decisión (se anima una vez al hacer scroll). */
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var st = document.createElement('style');
+  st.textContent = '.strip{display:block;width:100%;height:56px;margin:0}' +
+    '.strip circle{fill:var(--dash)}.strip circle.d{fill:var(--acc)}' +
+    '.strip text{font:400 11px var(--mono);fill:var(--soft)}' +
+    '.strip-w{padding-top:.4rem;padding-bottom:.4rem}';
+  document.head.appendChild(st);
+  function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function make(k) {
+    var w = document.createElement('div'); w.className = 'wrap strip-w';
+    var sv = el('svg', { class: 'strip', 'aria-hidden': 'true' }); w.appendChild(sv);
+    var N = 34, W = 1000, H = 56, dots = [], seed = k * 7 + 3;
+    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    sv.setAttribute('viewBox', '0 0 ' + W + ' ' + H); sv.setAttribute('preserveAspectRatio', 'xMinYMid meet');
+    for (var i = 0; i < N; i++) {
+      var x = 40 + i * (W - 140) / (N - 1), amp = 1 - i / (N - 1), y0 = H / 2 + (rnd() - .5) * H * .95 * Math.pow(amp, .6);
+      var c = el('circle', { cx: x, cy: reduce ? H / 2 : y0, r: 3 }); sv.appendChild(c); dots.push([c, y0]);
+    }
+    var d = el('circle', { cx: W - 60, cy: H / 2, r: 7, class: 'd' }); sv.appendChild(d);
+    var lb = el('text', { x: W - 44, y: H / 2 + 4 }); lb.textContent = 'decisión'; sv.appendChild(lb);
+    if (!reduce) {
+      d.setAttribute('r', 0); lb.style.opacity = 0;
+      var done = false;
+      var io = new IntersectionObserver(function (es) { es.forEach(function (en) {
+        if (en.isIntersecting && !done) {
+          done = true; var t0 = performance.now(), T = 1700;
+          (function step(t) {
+            var p = Math.min((t - t0) / T, 1), e = 1 - Math.pow(1 - p, 3);
+            dots.forEach(function (o) { o[0].setAttribute('cy', o[1] + (H / 2 - o[1]) * e); });
+            d.setAttribute('r', 7 * Math.max(0, (p - .6) / .4)); lb.style.opacity = Math.max(0, (p - .8) / .2);
+            if (p < 1) requestAnimationFrame(step);
+          })(t0);
+        }
+      }); }, { threshold: .6 });
+      io.observe(sv);
+    }
+    return w;
+  }
+  var hero = document.querySelector('.hero'), main = document.querySelector('main'), foot = document.querySelector('footer');
+  if (hero && hero.parentNode) hero.parentNode.insertBefore(make(0), hero.nextSibling);
+  if (foot && foot.parentNode && main) foot.parentNode.insertBefore(make(1), foot);
+})();
+
 /* Mirada en vivo: el cursor se comporta como un eye-tracker.
    Anillo = punto de mirada; el rastro (sacadas) y las fijaciones se desvanecen solos. */
 (function () {
