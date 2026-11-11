@@ -36,23 +36,24 @@
 <dl class="facts">
   <div><dt>Contexto</dt><dd>Semillero de Cognición, Universidad de los Andes</dd></div>
   <div><dt>Tecnología</dt><dd>Eye tracker Gazepoint, Quarto</dd></div>
-  <div><dt>Estado</dt><dd>Tablero y repositorio públicos</dd></div>
+  <div><dt>Estado</dt><dd>En desarrollo; manual, tablero y repositorio públicos</dd></div>
 <!-- COMPLETAR: añadir <div><dt>Mi rol</dt><dd>diseño del juego, estímulos, análisis, tablero…</dd></div> -->
 </dl>
 
 <h2>La idea</h2>
 <div class="prose">
   <p>Enseñar cómo se investiga la atención suele quedarse en la teoría. Este proyecto convierte el proceso en un juego: quien participa busca aves en la selva mientras el equipo registra hacia dónde mira, y así se practican de forma concreta las etapas de un estudio de seguimiento ocular.</p>
+  <p>Cada escena tiene aves de tres categorías: unas restan puntos (miran lo que llama la atención y no conviene), otras suman y las más valiosas son las más difíciles de encontrar, porque están camufladas. El puntaje es el tiempo de fijación por el valor de cada ave; solo cuentan las fijaciones de al menos 0,2 segundos.</p>
   <!-- COMPLETAR (2-3 frases): qué pregunta de investigación se ilustra con el juego (p. ej. qué patrón de atención se mide) y dónde se ha usado o se usaría (colegios, talleres, semillero). -->
 </div>
 
-<h2>Qué incluye</h2>
+<h2>Qué incluye y dónde encontrarlo</h2>
 <div class="cards">
-  <div class="card"><p class="label">1 · Manual técnico-pedagógico</p><p>Guía para quien facilita la actividad: cómo preparar el equipo, aplicar el juego y explicar a los niños lo que se mide.</p></div>
-  <div class="card"><p class="label">2 · Estímulos</p><p>Material visual del juego, diseñado para la atención visual en niños desde los 7 años.</p></div>
-  <div class="card"><p class="label">3 · Tablero de resultados</p><p>Visualización de los datos de cada jugador, construida con Quarto.</p></div>
+  <div class="card"><p class="label">1 · Manual técnico-pedagógico</p><p>Marco teórico, instalación y calibración del Gazepoint GP3HD, configuración del experimento, sistema de puntuación, extracción de datos y operación en el laboratorio.</p><p><a href="https://github.com/dalejandro0506/Eye_Tracker_Birds_Game/blob/main/manual_eyetracking_avistamiento.qmd">Ver el manual (Quarto) →</a></p></div>
+  <div class="card"><p class="label">2 · Estímulos</p><p>Ilustraciones de las aves, escenas y pantallas auxiliares. El juego tiene 10 escenas en 5 niveles de dificultad creciente, con tiempos de exposición de 5,0 a 3,0 segundos.</p><p><a href="https://github.com/dalejandro0506/Eye_Tracker_Birds_Game/tree/main/Dise%C3%B1o%20de%20est%C3%ADmulos">Ver los estímulos →</a></p></div>
+  <div class="card"><p class="label">3 · Tablero de resultados</p><p>Se abre en el navegador, sin instalación. Muestra datos de prueba de 8 jugadores ficticios y permite cargar el archivo exportado por Gazepoint; los datos se procesan en el navegador.</p><p><a href="https://dalejandro0506.github.io/Eye_Tracker_Birds_Game/avistamiento_dashboard.html">Abrir el tablero →</a></p></div>
 </div>
-<!-- COMPLETAR: revisar que las descripciones de arriba coincidan con lo que realmente contiene cada pieza (sobre todo el manual). -->
+<p class="meta">También en el repositorio: la <a href="https://github.com/dalejandro0506/Eye_Tracker_Birds_Game/blob/main/Uso%20de%20Eye%20Tracker%20V1.pdf">guía de instalación y uso del equipo (PDF)</a>, un <a href="https://github.com/dalejandro0506/Eye_Tracker_Birds_Game/tree/main/Gazepoint/result">dataset de prueba anonimizado</a> y el <a href="https://github.com/dalejandro0506/Eye_Tracker_Birds_Game">código completo</a>.</p>
 
 <!-- COMPLETAR: sección "Cómo se ve" con una captura del juego y otra del tablero. Formato: <h2>Cómo se ve</h2><div class="gallery"><figure><img src="img/aves-xxx.webp" alt="..."><figcaption>...</figcaption></figure></div> -->
 
