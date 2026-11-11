@@ -16,11 +16,11 @@
     function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
     sv.setAttribute('viewBox', '0 0 ' + W + ' ' + H); sv.setAttribute('preserveAspectRatio', 'xMinYMid meet');
     for (var i = 0; i < N; i++) {
-      var x = 40 + i * (W - 140) / (N - 1), amp = 1 - i / (N - 1), y0 = H / 2 + (rnd() - .5) * H * .95 * Math.pow(amp, .6);
+      var x = 40 + i * (W - 210) / (N - 1), amp = 1 - i / (N - 1), y0 = H / 2 + (rnd() - .5) * H * .95 * Math.pow(amp, .6);
       var c = el('circle', { cx: x, cy: reduce ? H / 2 : y0, r: 3 }); sv.appendChild(c); dots.push([c, y0]);
     }
-    var d = el('circle', { cx: W - 60, cy: H / 2, r: 7, class: 'd' }); sv.appendChild(d);
-    var lb = el('text', { x: W - 44, y: H / 2 + 4 }); lb.textContent = 'decisión'; sv.appendChild(lb);
+    var d = el('circle', { cx: W - 120, cy: H / 2, r: 7, class: 'd' }); sv.appendChild(d);
+    var lb = el('text', { x: W - 104, y: H / 2 + 4 }); lb.textContent = 'decisión'; sv.appendChild(lb);
     if (!reduce) {
       d.setAttribute('r', 0); lb.style.opacity = 0;
       var done = false;
