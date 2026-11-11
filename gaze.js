@@ -20,7 +20,7 @@
       var c = el('circle', { cx: x, cy: reduce ? H / 2 : y0, r: 3 }); sv.appendChild(c); dots.push([c, y0]);
     }
     var d = el('circle', { cx: W - 120, cy: H / 2, r: 7, class: 'd' }); sv.appendChild(d);
-    var lb = el('text', { x: W - 104, y: H / 2 + 4 }); lb.textContent = 'decisión'; sv.appendChild(lb);
+    var lb = el('text', { x: W - 104, y: H / 2 + 4 }); lb.textContent = 'decision'; sv.appendChild(lb);
     if (!reduce) {
       d.setAttribute('r', 0); lb.style.opacity = 0;
       var done = false;
