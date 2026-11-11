@@ -49,11 +49,11 @@
   box.className = 'lb';
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.setAttribute('aria-label', 'Visor de imágenes');
-  box.innerHTML = '<button class="lb-x" aria-label="Cerrar">×</button>' +
-    '<button class="lb-p" aria-label="Anterior">‹</button>' +
+  box.setAttribute('aria-label', 'Image viewer');
+  box.innerHTML = '<button class="lb-x" aria-label="Close">×</button>' +
+    '<button class="lb-p" aria-label="Previous">‹</button>' +
     '<figure><img alt=""><figcaption></figcaption></figure>' +
-    '<button class="lb-n" aria-label="Siguiente">›</button>' +
+    '<button class="lb-n" aria-label="Next">›</button>' +
     '<div class="lb-c" aria-live="polite"></div>';
   document.body.appendChild(box);
   var img = box.querySelector('img'), cap = box.querySelector('figcaption'), cnt = box.querySelector('.lb-c');
