@@ -59,3 +59,17 @@
 .card.dark .tag.o{color:#D9DFEA;border-color:#3a4a73}
 .legend{font-size:.8rem;color:var(--soft);margin:0 0 1.6rem;line-height:2}
 .legend .tag{margin-right:.3rem}
+
+
+/* Rediseño: azul marino + esmeralda */
+.gallery img,.thumbs img{border-radius:0}
+.card .cover{margin:-1.3rem -1.4rem 1rem}
+.card .cover img{border-radius:0}
+.thumbs a:hover img{border-color:var(--acc)}
+.back{font:400 .8rem var(--mono);color:var(--soft);text-decoration:none}
+.back:hover{color:var(--acc2)}
+.facts div{border-top:1px solid var(--fg)}
+.facts dt{font:400 .7rem var(--mono);letter-spacing:0;text-transform:none}
+.feat .kpis b{font-weight:340;letter-spacing:-.02em}
+.more-link{font-weight:500}
+.note{border-left:2px dashed var(--dash)}
