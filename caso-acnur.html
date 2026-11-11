@@ -4,25 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tablero de reasentamiento · Alejo Socha</title>
-<meta name="description" content="Caso: flujo de gestión de casos y tablero en Power BI para el Centro de Reasentamiento de ACNUR en Bogotá, adoptado para el reporte mensual a donantes.">
+<meta name="description" content="Caso: tablero en Power BI que integra datos de registro, protección y reasentamiento de un centro de reasentamiento de ACNUR en Bogotá, adoptado para el reporte mensual a donantes.">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="portafolio.css">
 </head>
 <body>
-<header class="nav"><div class="wrap"><a class="brand" href="index.html">Alejo Socha</a><nav><ul><li><a href="index.html">Inicio</a></li><li><a href="cv.html">CV</a></li><li><a href="proyectos.html" class="active">Proyectos</a></li><li><a href="tesis.html">Tesis</a></li></ul></nav></div></header>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html">Alejo Socha</a><nav><ul><li><a href="index.html">Inicio</a></li><li><a href="cv.html">CV</a></li><li><a href="proyectos.html" class="active">Proyectos</a></li><li><a href="tesis.html">Tesis</a></li><li><a href="publicaciones.html">Publicaciones</a></li></ul></nav></div></header>
 
 <section class="hero">
   <div class="wrap">
     <div>
       <p class="eyebrow">ACNUR · Caso</p>
-      <h1>Del factsheet manual al tablero de reporte a donantes</h1>
-      <p class="lead">Un flujo de gestión de casos y un tablero que integra datos de registro, protección y reasentamiento, adoptado para el reporte mensual a donantes.</p>
+      <h1>Un tablero para seguir el reasentamiento de principio a fin</h1>
+      <p class="lead">Un solo tablero en Power BI que integra datos de registro, protección y reasentamiento de un centro de reasentamiento de ACNUR en Bogotá, y alimenta el reporte mensual a donantes.</p>
     </div>
     <div class="stats">
-      <div class="stat"><b>5</b><span>profesionales a mi cargo</span></div>
-      <div class="stat"><b>30</b><span>casos diarios en el Centro</span></div>
-      <div class="stat"><b>1.350</b><span>individuos registrados</span></div>
-      <div class="stat"><b>180</b><span>casos de reasentamiento</span></div>
+      <div class="stat"><b>8</b><span>secciones de análisis</span></div>
+      <div class="stat"><b>3</b><span>grupos de filtros: reasentamiento, registro y protección</span></div>
+      <div class="stat"><b>1</b><span>reporte mensual a donantes alimentado</span></div>
     </div>
   </div>
 </section>
@@ -32,25 +31,37 @@
 <a class="back" href="proyectos.html">← Todos los proyectos</a>
 
 <dl class="facts">
-  <div><dt>Organización</dt><dd>ACNUR, Bogotá</dd></div>
-  <div><dt>Rol</dt><dd>Asistente de registro (Voluntario ONU) y Asistente senior de registro (GS-5)</dd></div>
-  <div><dt>Periodo</dt><dd>Dic. 2023 – Feb. 2025</dd></div>
-  <div><dt>Herramientas</dt><dd>Power BI, PRIMES, ProGres, BIMS</dd></div>
+  <div><dt>Para</dt><dd>ACNUR, Centro de Reasentamiento de Bogotá</dd></div>
+  <div><dt>Producto</dt><dd>Tablero interactivo de 9 páginas</dd></div>
+  <div><dt>Fuente de datos</dt><dd>ProGres (registro)</dd></div>
+  <div><dt>Herramientas</dt><dd>Power BI</dd></div>
 </dl>
 
-<h2>Contexto</h2>
+<h2>El problema</h2>
 <div class="prose">
-  <p>El Centro de Reasentamiento de Bogotá atendía unos 30 casos diarios. El reporte operativo dependía de un factsheet elaborado a mano, y el seguimiento de cada caso entre registro, protección y reasentamiento no estaba unificado.</p>
-  <!-- COMPLETAR (1 frase): confirmar/ajustar la descripción del problema inicial en tus palabras, p. ej. cuánto tardaba el factsheet o qué se perdía entre etapas. -->
+  <p>El reporte operativo del Centro dependía de un factsheet armado a mano. Hacía falta un solo lugar con una lectura actualizada de los procesos de registro, protección y reasentamiento, que sirviera para ver tendencias, identificar brechas y apoyar la toma de decisiones.</p>
 </div>
 
-<h2>Qué hice</h2>
+<h2>Cómo está organizado</h2>
+<p class="intro">Una página de inicio con guía de uso y filtros, y ocho secciones de análisis a las que se llega por pestañas.</p>
+<div class="cards">
+  <div class="card"><p class="label">1 · Casos de reasentamiento</p><p>Visión general: origen de la remisión, estado del proceso y del caso, país de origen y de envío, y recomendación de envío.</p></div>
+  <div class="card"><p class="label">2 · Casos procesados</p><p>Entrevistas realizadas por mes, casos recomendados y enviados, y cupos mensuales frente a lo enviado.</p></div>
+  <div class="card"><p class="label">3 · Registro</p><p>Personas y grupos registrados en el tiempo, por género, edad, composición familiar y nacionalidad.</p></div>
+  <div class="card"><p class="label">4 · Ocupación y educación</p><p>Nivel educativo y ocupaciones registradas, con una nota que aclara cómo se calcula cada indicador.</p></div>
+  <div class="card"><p class="label">5 · Regularización</p><p>Estatus legal y documentos que prueban la regularización, a partir de lo registrado en ProGres.</p></div>
+  <div class="card"><p class="label">6 · Necesidades específicas de protección</p><p>Categorías y subcategorías de necesidad, puntaje de la ficha y distribución por sexo.</p></div>
+  <div class="card"><p class="label">7 · Remisiones</p><p>Remisiones internas y externas por mes, categoría y organización receptora.</p></div>
+  <div class="card"><p class="label">8 · Comunicaciones</p><p>Comunicaciones realizadas por categoría, tipo y mes.</p></div>
+</div>
+
+<h2>Decisiones de diseño</h2>
 <div class="prose">
   <ul>
-    <li><b>Primer tablero (Voluntario ONU, Dic. 2023 – Abr. 2024):</b> un tablero en Power BI que reemplazó el factsheet manual del reporte operativo.</li>
-    <li><b>Flujo de gestión de casos (Asistente senior, Abr. 2024 – Feb. 2025):</b> rediseño del flujo que redujo los tiempos de espera.</li>
-    <li><b>Tablero de reasentamiento:</b> integra datos de registro, protección y reasentamiento, y fue adoptado para el reporte mensual a donantes.</li>
-    <li><b>Liderazgo y estándares:</b> equipo de 5 profesionales, capacitaciones en SOPs e informe final con diagnóstico humanitario.</li>
+    <li><b>Filtros agrupados por tema</b> en la página de inicio, con un botón para limpiarlos todos y volver a la vista completa.</li>
+    <li><b>Navegación por pestañas</b> con una guía de uso en la portada.</li>
+    <li><b>Notas metodológicas junto a cada indicador</b> cuando el cálculo no es obvio, por ejemplo qué registros se excluyen de un análisis.</li>
+    <li><b>Filtros definidos una sola vez en la portada</b>, que se usan para explorar todas las secciones.</li>
   </ul>
 </div>
 
@@ -61,17 +72,13 @@
   <figure><img src="img/acnur-ocupacion.webp" alt="Análisis de ocupación y nivel educativo de la población registrada" loading="lazy"><figcaption>Ocupación y nivel educativo de la población registrada.</figcaption></figure>
   <figure><img src="img/acnur-remisiones.webp" alt="Remisiones internas y externas por mes, categoría y organización aliada" loading="lazy"><figcaption>Remisiones internas y externas. Las organizaciones aliadas aparecen con nombres genéricos.</figcaption></figure>
 </div>
-<p class="note">Capturas del tablero operativo, que está en inglés. Muestran datos agregados, sin información individual; se retiraron los logos y se sustituyeron los nombres de entidades. No se incluyen las páginas con categorías de baja frecuencia.</p>
+<p class="note">Capturas del tablero operativo, que está en inglés. Muestran datos agregados, sin información individual; se retiraron los logos y se sustituyeron los nombres de entidades. No se incluyen las secciones con categorías de baja frecuencia.</p>
 
-<h2>Resultados</h2>
-<div class="cards">
-  <div class="card"><p class="label">Adopción</p><p>Tablero usado para el reporte mensual a donantes.</p></div>
-  <div class="card"><p class="label">Tiempos</p><p>Menores tiempos de espera gracias al nuevo flujo de gestión de casos.</p></div>
-  <div class="card"><p class="label">Escala</p><p>1.350 individuos registrados y 180 casos de reasentamiento en el periodo.</p></div>
+<h2>Resultado</h2>
+<div class="prose">
+  <p>El tablero reemplazó el factsheet manual del reporte operativo y fue adoptado para el reporte mensual a donantes.</p>
+  <!-- COMPLETAR (opcional): qué cambió en la práctica, p. ej. tiempo de preparación del reporte antes → después, o quién lo consulta. -->
 </div>
-<!-- COMPLETAR (opcional): cifra de reducción del tiempo de espera, si la tienes (antes → después). -->
-
-<p class="note">Por confidencialidad no se publican datos ni tableros con información de personas atendidas.</p>
 
 <div class="case-nav">
   <a href="caso-fru.html">← Anterior: Sistema integrado de M&amp;E</a>
