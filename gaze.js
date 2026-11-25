@@ -54,7 +54,7 @@
     '#gz .tr{stroke:var(--acc);stroke-width:1.2;stroke-linecap:round}' +
     '#gz .fx{fill:var(--acc);fill-opacity:.28;stroke:var(--acc);stroke-width:1.2}' +
     '#gz text{font:400 10px var(--mono);fill:var(--fg);text-anchor:middle;dominant-baseline:central}' +
-    '#gzc{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border:1.5px solid var(--acc);border-radius:50%;pointer-events:none;z-index:41;opacity:0;transition:opacity .25s}';
+    '#gzc{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border:1.5px solid var(--acc);border-radius:50%;background:color-mix(in srgb,var(--acc) 16%,transparent);pointer-events:none;z-index:41;opacity:0;transition:opacity .25s}';
   document.head.appendChild(st);
   var svg = document.createElementNS(NS, 'svg'); svg.id = 'gz'; svg.setAttribute('aria-hidden', 'true');
   var ring = document.createElement('div'); ring.id = 'gzc'; ring.setAttribute('aria-hidden', 'true');
@@ -79,11 +79,22 @@
       var tx = el('text', { x: fix.x, y: fix.y }); tx.textContent = n; g.appendChild(tx);
       svg.appendChild(g); fixes.push({ e: g, t: now });
       prev = { x: fix.x, y: fix.y };
+      onFixation(n);
     }
     fix = null;
   }
 
+  var off = false;
+  try { off = localStorage.getItem('gz-off') === '1'; } catch (e) {}
+
+  function clearTrace() {
+    saccs.concat(fixes).forEach(function (o) { o.e.remove(); });
+    saccs = []; fixes = []; fix = prev = cur = null;
+    ring.style.opacity = 0; live.setAttribute('stroke-opacity', 0);
+  }
+
   addEventListener('mousemove', function (e) {
+    if (off) return;
     var now = performance.now(), x = e.clientX, y = e.clientY;
     cur = { x: x, y: y }; lastMove = now;
     ring.style.opacity = 1; ring.style.transform = 'translate(' + x + 'px,' + y + 'px)';
@@ -93,8 +104,68 @@
   }, { passive: true });
   document.addEventListener('mouseleave', function () { ring.style.opacity = 0; endFix(performance.now()); live.setAttribute('stroke-opacity', 0); cur = null; });
 
+  /* Explicación del efecto: tarjeta no modal. Se abre sola una vez, tras las primeras fijaciones del visitante. */
+  var pst = document.createElement('style');
+  pst.textContent =
+    '#gzb{position:fixed;right:1rem;bottom:1rem;z-index:42;display:flex;align-items:center;gap:.5rem;padding:.5rem .8rem;background:var(--card);color:var(--fg);border:1px solid var(--dash);font:400 .75rem var(--mono);cursor:pointer}' +
+    '#gzb::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--acc)}' +
+    '#gzb:hover{border-color:var(--acc)}' +
+    '#gzp{position:fixed;right:1rem;bottom:4rem;z-index:45;width:min(23rem,calc(100vw - 2rem));max-height:calc(100vh - 9.5rem);overflow:auto;padding:1rem 1.15rem;background:var(--card);color:var(--muted);border:1px dashed var(--acc);box-shadow:0 14px 40px rgba(6,11,24,.25);font-size:.84rem;line-height:1.5}' +
+    '#gzp[hidden]{display:none}' +
+    '#gzp h2{font-size:1.2rem;margin:0 2rem .5rem 0}#gzp .label{margin-right:2rem}' +
+    '#gzp p{margin:.5rem 0}#gzp dl{margin:.5rem 0 0}' +
+    '#gzp dt{font:400 .74rem var(--mono);color:var(--acc2)}#gzp dd{margin:0 0 .45rem}' +
+    '#gzp .x{position:absolute;top:.6rem;right:.6rem;width:2rem;height:2rem;border:0;background:transparent;color:var(--fg);font-size:1.3rem;cursor:pointer}' +
+    '#gzp .act{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem}' +
+    '#gzp .btn{cursor:pointer;padding:.45rem .8rem;font-size:.82rem}';
+  document.head.appendChild(pst);
+
+  var opener = document.createElement('button');
+  opener.id = 'gzb'; opener.type = 'button'; opener.textContent = 'Why does the cursor leave a trace?';
+  opener.setAttribute('aria-expanded', 'false'); opener.setAttribute('aria-controls', 'gzp');
+
+  var pop = document.createElement('div');
+  pop.id = 'gzp'; pop.hidden = true;
+  pop.setAttribute('role', 'dialog'); pop.setAttribute('aria-labelledby', 'gzp-t');
+  pop.innerHTML =
+    '<button type="button" class="x" aria-label="Close">×</button>' +
+    '<p class="label">Eye tracking · part of my research</p>' +
+    '<h2 id="gzp-t">This is what eye tracking looks like</h2>' +
+    '<p>Here, your cursor plays the role of your eyes. <b>The longer you rest it in one spot, the bigger the circle grows</b>, just as eye-tracking plots show where attention lingers. Lines connect one stop to the next.</p>' +
+    '<p><b>Try it:</b> hold your cursor still on something that catches your eye.</p>' +
+    '<div class="act"><button type="button" class="btn tgl"></button></div>';
+  document.body.appendChild(pop); document.body.appendChild(opener);
+
+  var tgl = pop.querySelector('.tgl');
+  function label() { tgl.textContent = off ? 'Turn trace on' : 'Turn trace off'; }
+  function seen() { try { localStorage.setItem('gz-seen', '1'); } catch (e) {} }
+  function wasSeen() { try { return localStorage.getItem('gz-seen') === '1'; } catch (e) { return false; } }
+  var shown = wasSeen();
+  function show(focus) {
+    pop.hidden = false; shown = true; opener.setAttribute('aria-expanded', 'true');
+    if (focus) pop.querySelector('.x').focus();
+  }
+  function hide() {
+    var inside = pop.contains(document.activeElement);
+    pop.hidden = true; seen(); opener.setAttribute('aria-expanded', 'false');
+    if (inside) opener.focus();
+  }
+  function onFixation(count) { if (!shown && count >= 3) show(false); }
+  opener.addEventListener('click', function () { if (pop.hidden) show(true); else hide(); });
+  pop.querySelector('.x').addEventListener('click', hide);
+  tgl.addEventListener('click', function () {
+    off = !off; label();
+    try { localStorage.setItem('gz-off', off ? '1' : '0'); } catch (e) {}
+    if (off) clearTrace();
+  });
+  addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) hide(); });
+  label();
+
   (function tick(now) {
-    if (fix && now - fix.t0 > 400) { endFix(now); if (cur) fix = { x: cur.x, y: cur.y, t0: now + 1e9 }; }
+    var d = fix && cur ? Math.max(0, now - fix.t0 - 200) : 0;
+    var size = Math.min(16 + d / 45, 48);
+    ring.style.width = ring.style.height = size + 'px';
+    ring.style.margin = (-size / 2) + 'px 0 0 ' + (-size / 2) + 'px';
     var idle = now - lastMove;
     live.setAttribute('stroke-opacity', prev && cur ? Math.max(0, .55 * (1 - idle / 900)) : 0);
     if (prev && idle > 4000) prev = null;
