@@ -7,7 +7,7 @@
 .feat h3{font-size:1.3rem;margin-bottom:.5rem}
 .feat .kpis{list-style:none;margin:.8rem 0 0;padding:.8rem 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1rem}
 .feat .kpis li{font-size:.78rem;color:var(--soft);line-height:1.3}
-.feat .kpis b{display:block;margin-bottom:.2rem;font-family:var(--serif);font-weight:normal;font-size:1.4rem;color:var(--fg);line-height:1.1}
+.feat .kpis b{display:block;margin-bottom:.2rem;font-family:var(--display);font-weight:normal;font-size:1.4rem;color:var(--fg);line-height:1.1}
 .card.dark .kpis{border-top-color:#2a3a63}
 .card.dark .kpis li{color:#BFC8D8}
 .card.dark .kpis b{color:#fff}
