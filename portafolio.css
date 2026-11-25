@@ -80,3 +80,9 @@
 .photo{margin:0;padding:.5rem;border:1px dashed var(--dash)}
 .photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%}
 @media (max-width:760px){.profile{grid-template-columns:1fr;gap:1.4rem}.photo{order:-1;width:190px;justify-self:center}}
+
+/* Foto del póster en Trayectoria académica */
+.profile.poster-row{grid-template-columns:minmax(0,38rem) 360px;margin:0 0 1rem}
+.poster figcaption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+.poster img{pointer-events:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+@media (max-width:900px){.profile.poster-row{grid-template-columns:1fr}.poster .photo{order:0;width:auto}.poster{width:100%;max-width:340px;justify-self:center}}
