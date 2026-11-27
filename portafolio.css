@@ -86,3 +86,9 @@
 .poster figcaption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
 .poster img{pointer-events:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 @media (max-width:900px){.profile.poster-row{grid-template-columns:1fr}.poster .photo{order:0;width:auto}.poster{width:100%;max-width:340px;justify-self:center}}
+
+/* Team photo on CV */
+.profile:has(.team){grid-template-columns:minmax(0,1fr) minmax(0,420px);justify-content:stretch}
+.photo.team img{aspect-ratio:auto;object-fit:contain}
+.team figcaption{font:400 .72rem var(--mono);color:var(--soft);margin-top:.5rem}
+@media (max-width:900px){.profile:has(.team){grid-template-columns:1fr}.photo.team{order:0;width:100%}}
