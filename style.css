@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--line);padding:1.8rem 0 4.5rem;color:var(--soft
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 /* Home photo */
-.hero .wrap.hero-with-photo{grid-template-columns:minmax(0,1fr) 260px;align-items:center}
+.hero .wrap.hero-with-photo{grid-template-columns:minmax(0,36rem) 260px;justify-content:start;column-gap:4.5rem;align-items:center}
 .hero-photo{margin:0;padding:.5rem;border:1px dashed var(--dash)}
 .hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%}
 @media (max-width:760px){.hero .wrap.hero-with-photo{grid-template-columns:1fr;gap:1.6rem}.hero-photo{order:-1;width:190px;justify-self:center}}
